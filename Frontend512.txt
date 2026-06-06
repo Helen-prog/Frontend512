@@ -1,0 +1,360 @@
+index.html
+
+align="left | center | right | justify"
+
+Shift + Alt + стрелка вниз
+- создать дубликат строки
+
+	h1
+h2
+		h3
+	h4
+		h5
+h6
+
+Shift + Alt + F
+- отформатировать разметку
+
+Ctrl + /
+- комментарий
+<!--  -->
+
+H2O
+file:///E:/Frontend512/html/index.html
+
+
+file:///E:/Frontend512/html/document%20new.html
+
+file:///E:/Frontend512/html/%D0%BD%D0%BE%D0%B2%D1%8B%D0%B9%20%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82.html
+
+
+open in browser
+
+Ctrl + H
+
+align="
+style="text-align:
+
+#FF0000  (rgb) от 0 до 9 от A до F
+# служебрый символ
+FF - red
+00 - green
+00 - blue
+
+rgba(255, 0, 0, 0.5)
+r - red
+g - green
+b - blue
+a - alpha (от 0 по 1)
+
+5 - 10 11 12
+4 - 7 8 9
+3 - 4 5 6
+2 - 1 2 3
+
+
+Shift + Alt + F
+- отформатировать разметку
+
+ p                  {color:      blue}
+ селектор           свойство:    значение
+ 
+/* комментарий в CSS */
+
+style.css
+
+icon new.jpg
+
+Растровые:
+*.jpg
+*.jpeg
+*.png
+*.gif
+Векторные:
+
+
+top right bottom left center
+300px 200px
+0 50% 100%
+
+<thead>
+<tfoot>
+<tbody>
+
+		 top
+left             right
+		bottom
+		
+		
+file:///E:/Frontend512/html/form/form.html
+file:///E:/Frontend512/html/form/test.php?firstName=&psw=&pol=on
+file:///E:/Frontend512/html/form/form.html?firstName=Alena&psw=1245&pol=on#test.php
+file:///E:/Frontend512/html/form/form.html?firstName=Alena&psw=1245&pol=on#test.php
+
+file:///E:/Frontend512/html/form/form.html#test.php
+
+file:///E:/Frontend512/html/form/form.html?firstName=Alena&psw=sdfsdfsdf&pol=on&x=49&y=42#test.php
+
+circle
+ellipse
+
+rem - относительно <html>
+em - относительно размера шрифта родителя
+
+vw - viewport width - 1% ширины окна
+vh - viewport height - 1% высоты окна
+vmin
+vmax
+
+https://rutube.ru/video/fb1864170ab76a01bf064a7d2f39e6ea/
+
+9 / 16 * 100
+
+and
+not
+,
+
+transform: matrix(w, sky, skx, h, mx, my);
+w - измение ширины
+sky - наклон по вертикли
+skx - наклон по горизонтали
+h - измение высоты
+mx - сдвиг по горизонтали
+my - сдвиг по вертикали
+
+Ctrl + [
+
+
+css-переменные
+
+
+favicon.icon
+
+
+Прикрепить ссылку на сайт, выложенную на хостинг, который мы делали на занятии
+
+
+EOT
+TTF
+
+WOFF
+WOFF2
+
+Ctrl + Alt + C
+Ctrl + Alt + V
+
+Tailwind CSS
+
+Node.js
+
+npm -v
+
+Win + R => cmd
+
+input.css
+
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+Tailwind CSS IntelliSense
+
+1 единица = 0,25rem
+
+p-4 -> padding: 1rem (4 * 0.25rem)  = 16px
+p-2 -> 0.5rem
+
+
+Написать отзыв по курсу "Разработка веб-страниц на языке разметки HTML5 с использованием каскадных таблиц стилей CSS3"
+
+
+Ctrl + / - строчный комментарий (//)
+Shift + Alt + A - блочный комментарий (/* ... */)
+
+Типы данных
+number  (5, 4.2)
+string  (Hello)
+boolean (true, false)
+undefined
+null
+
+Object
+
+undefined - неопределенное значение
+
+1) от 0 по 9
+2)
+ворона: 1
+вороны: 2,3,4
+ворон: 5,6,7,8,9,0
+
+Циклы
+
+
+Написать программу, вычисляющую произведение чисел в заданном диапазоне (Например: 5 и 10. Результат: 5*6*7*8*9*10=151200).
+
+
+
+let question = new Array();
+question[0] = 'Как называют манекенщицу супер-класса?\n\n A: Топмодель\t B: Тяп-модель\n C: Поп-модель\t D: Ляп-модель';
+question[1] = 'Кто вырос в джунглях среди диких зверей?\n\n A:
+Колобок\t B: Маугли\n C: Бэтмен\t D: Чарльз Дарвин';
+question[2] = 'Как называлась детская развлекательная программа,
+популярная в прошлые годы?\n\n A: АБВГДейка\t B: ЁКЛМНейка\n C:
+ЁПРСТейка\t D: ЕЖЗИКейка';
+question[3] = 'Как звали невесту Эдмона Дантеса, будущего графа МонтеКристо?\n\n A: Мерседес\t B: Тойота\n C: Хонда\t D: Лада';
+question[4] = 'Какой цвет получается при смешении синего и
+красного?\n\n A: Коричневый\t B: Фиолетовый\n C: Зелёный\t D:
+Голубой';
+question[5] = 'Из какого мяса традиционно готовится начинка для
+чебуреков?\n\n A: Баранина\t B: Свинина\n C: Телятина\t D: Конина';
+question[6] = 'Какой народ придумал танец чардаш?\n\n A: Венгры\t B:
+Румыны\n C: Чехи\t D: Молдаване';
+question[7] = 'Изучение соединений какого элемента является основой
+органической химии?\n\n A: Кислород\t B: Углерод\n C: Азот\t D:
+Кремний';
+question[8] = 'Кто открыл тайну трёх карт графине из «Пиковой дамы» А.
+С. Пушкина?\n\n A: Казанова\t B: Калиостро\n C: Сен-Жермен\t D: Томас
+Воган';
+question[9] = 'В какой стране была пробурена первая промышленная
+нефтяная скважина?\n\n A: Кувейт\t B: Иран\n C: Ирак\t D:
+Азербайджан';
+question[10] = 'Разновидностью какого минерала является горный
+хрусталь?\n\n A: Апатита\t B: Циркона\n C: Кварца\t D: Турмалина';
+question[11] = 'Какое название в 1918 году дали городу Царское
+Село?\n\n A: Павловск\t B: Пушкин\n C: Красное Село\t D: Детское
+Село';
+question[12] = 'Кто распорядился поместить на американских банкнотах
+надпись «Мы верим в Бога»?\n\n A: Дуайт Эйзенхауэр\t B: Сэлмон Чейз\n
+C: Бенджамин Франклин\t D: Франклин Рузвельт';
+question[13] = 'На каком языке просветитель Франциск Скорина в 1517—
+1525 годах напечатал первые среди восточных славян книги?\n\n A: На
+польском\t B: На русском\n C: На белорусском\t D: На украинском';
+question[14] = 'Какого слова нет на памятнике П. К. Пахтусову в
+Кронштадте?\n\n A: Польза\t B: Отвага\n C: Дело\t D: Труд';
+
+let correctAnswer = new Array();
+correctAnswer[0] = 'a';
+correctAnswer[1] = 'b';
+correctAnswer[2] = 'a';
+correctAnswer[3] = 'a';
+correctAnswer[4] = 'b';
+correctAnswer[5] = 'a';
+correctAnswer[6] = 'a';
+correctAnswer[7] = 'b';
+correctAnswer[8] = 'c';
+correctAnswer[9] = 'd';
+correctAnswer[10] = 'c';
+correctAnswer[11] = 'd';
+correctAnswer[12] = 'b';
+correctAnswer[13] = 'c';
+correctAnswer[14] = 'c';
+
+let money = new Array();
+money[0] = '100';
+money[1] = '200';
+money[2] = '300';
+money[3] = '500';
+money[4] = '1000';
+money[5] = '2000';
+money[6] = '4000';
+money[7] = '8000';
+money[8] = '16000';
+money[9] = '32000';
+money[10] = '64000';
+money[11] = '125000';
+money[12] = '250000';
+money[13] = '500000';
+money[14] = '1000000';
+
+Immediately Invoked Function Expression (IIFE) - самовызывающаяся (анонимная функция)
+
+
+Функция коллбек («функция обратного вызова»)
+call back
+callback
+
+Функция высокого порядка
+
+let sum = 0;
+let current = 1;
+sum + current => 0 + 1 = 1;
+sum = 1;
+curent = 2;
+sum + current => 1 + 2 = 3;
+sum = 3;
+curent = 3;
+sum + current => 3 + 3 = 6;
+sum = 6;
+curent = 4;
+sum + current => 6 + 4 = 10;
+sum = 10;
+curent = 5;
+sum + current => 10 + 5 = 15;
+sum = 15;
+
+prev = ""
+curr = "Hello"
+prev = "Hello"
+curr = "World"
+prev = "Hello World"
+curr = "!"
+prev = "Hello World !"
+
+копейка - 1 (21, 31, 41, ..., 91)
+копейки - 2
+		  3
+		  4
+копеек - 5
+		 6
+		 7
+		 8
+		 9
+		 0
+
+Исключение: 11, 12, 13, 14
+
+311
+
+5! = 1*2*3*4*5
+
+Фазы события:
+- фаза захвата (сверху вниз)
+- фаза цели (на каком элементе произошло событие)
+- фаза всплытия (событие идет обратно - снизу вверх)
+
+let mas = ["  Hello   "];
+mas.trim();
+
+file:///E:/Frontend512/js/index.html
+file:///E:/Frontend512/js/example/submit.html?value=qqq
+
+FormData()
+
+checkValidity()
+
+
+0-9A-F
+
+https://htmlbook.ru/
+
+Позитивная опережающая проверка
+X(?=Y)
+x, если за ним следует y
+
+Негативная опережающая проверка
+X(?!Y)
+x, если за ним не следует y
+
+Позитивная ретроспективные
+(?<=Y)X 
+x, если следует за y
+
+Негативная ретроспективные
+(?<!Y)X 
+x, если не следует за y
+
+
+Система контроля версий (Version Control Systems, VCS) — это система, сохраняющая изменения в одном или нескольких файлах так, чтобы потом можно было восстановить определённые старые версии.
+
+
+https://git-scm.com/
+
