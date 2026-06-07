@@ -358,3 +358,89 @@ x, если не следует за y
 
 https://git-scm.com/
 
+git
+github
+
+git init
+- инициализация репозитория
+
+git status
+- состояние репозитория
+
+git add -A
+		--all
+		script.js
+		.
+		
+git config --global user.name "new user"
+		   --local
+
+git config --global user.name
+
+git config --global user.email "test@mail.ru"
+
+git config --global user.email
+
+git commit -m "first commit"
+
+.gitignore
+
+git add .
+git commit -m "added gitignore"
+
+git branch
+- просмотр веток
+
+git branch test
+- создание ветки
+
+git branch -D test
+
+
+git branch readme
+
+
+git checkout readme
+- перейти на ветку
+
+readme.md
+
+git add .
+git commit -m "created file readme.md"
+
+git checkout master
+
+master        ->   readme
+- script.js	        - script.js
+- index.html        - index.html
+- style.css		    - style.css	
+- readme.md			- readme.md
+					
+git merge readme
+- слияние веток
+
+git branch -D readme
+
+git log
+- история коммитов
+
+Settings -> Developer Settings -> Personal access tokens -> Tokens (classic) -> Generate new token (classic)
+
+
+Generate token
+
+Win + R => control
+
+Диспечер учетных данных
+
+
+https://github.com
+Helen-prog
+токен
+
+
+git push -u origin master
+
+
+
+
