@@ -441,6 +441,24 @@ Helen-prog
 
 git push -u origin master
 
+0) git status
+1) git add .
+2) git commit -m "change"
+3) git push
 
 
 
+2bc0a4162bc9a39efcc6d96ad4809d0b01b457f1
+
+git clone https://github.com/Helen-prog/Frontend512.git
+- клонирование репозитория
+
+git pull
+- забрать изменения из локального репозитория в локальный
+
+
+let mas = [1, 2]; 
+console.log(mas[0]);  // 1
+
+let obj = {one: 1, two: 2};
+console.log(obj["one"]);  // 1
