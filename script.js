@@ -4546,7 +4546,7 @@ function clickNumber(event) {
 //     let password = form.password.value;
 //     event.preventDefault();
 //     // if(username.length < 3){
-        
+
 //     //     alert("Имя пользователя должно быть более 3 символов")
 //     // }
 
@@ -4557,7 +4557,7 @@ function clickNumber(event) {
 
 //     console.log(typeof username);
 //     console.log(typeof password);
-    
+
 // })
 
 
@@ -4877,7 +4877,7 @@ $ - конец строки (после последовательностью �
 //     let {year, month, day} = result.groups;
 
 //     document.writeln(`${day}.${month}.${year}`);
-    
+
 // }
 
 // let st = "-1.5 0 2 -123.4."
@@ -4974,7 +4974,7 @@ $ - конец строки (после последовательностью �
 //              <legend><b>${name}</b></legend>
 //              <div>${text}</div>
 //          </fieldset>  `);
-    
+
 // }
 
 // let st = "  текст строки первой    ";
@@ -4998,9 +4998,9 @@ $ - конец строки (после последовательностью �
 //     event.preventDefault();
 
 //     let [username, email, password] = registrastionForm.elements;
-    
+
 //     errorMessages.innerHTML = "";
-    
+
 //     if(!username.value.trim()){
 //         displayError("Имя пользователя обязательно");
 //         return;
@@ -5100,3 +5100,201 @@ $ - конец строки (после последовательностью �
 //     console.log(el[0], el[1]);
 //     document.writeln("<br>" + el);
 // }
+
+/* let area = document.getElementById("area");
+let curentPlayer = document.getElementById("curPlayer");
+let cell;
+
+let player = "x";
+let stat = {
+    'x': 0,
+    'o': 0,
+    'd': 0
+}
+
+let winIndex = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9],
+    [1, 5, 9],
+    [3, 5, 7]
+];
+
+for (let i = 1; i <= 9; i++) {
+    area.innerHTML += "<div class='cell' data-pos='" + i + "'>";
+}
+
+cell = document.querySelectorAll(".cell");
+
+for (let i = 0; i < cell.length; i++) {
+    cell[i].addEventListener("click", cellClick);
+}
+
+function cellClick() {
+    let data = [];
+
+    if (!this.innerHTML) {
+        this.innerHTML = player;
+    } else {
+        alert("Ячейка занята");
+        return;
+    }
+
+    for (let i in cell) {
+        if (cell[i].innerHTML == player) {
+            data.push(cell[i].getAttribute("data-pos"));
+        }
+    }
+
+    if(checkWin(data)){
+        stat[player] += 1;
+        restart("Выиграл: " + player);
+    } else {
+        let draw = true;
+        for(let i in cell){
+            if(cell[i].innerHTML == ''){
+                draw = false;
+            }
+        }
+        if(draw){
+            stat.d += 1;
+            restart("Ничья");
+        }
+    }
+
+    player = player == 'x' ? "o" : "x";
+    curentPlayer.innerHTML = player.toUpperCase();
+
+    console.log(data);
+}
+
+function checkWin(data){
+   
+    
+    for(let i in winIndex){
+        let win = true;
+        for(let j in winIndex[i]){
+            let id = String(winIndex[i][j]);
+              let ind = data.indexOf(id);
+            if(ind == -1){
+                win = false;
+            }
+        }
+        if(win){
+            return true; 
+        }
+    }
+
+    return false;
+}
+
+function restart(text){
+    alert(text);
+    for (let i = 0; i < cell.length; i++) {
+        cell[i].innerHTML = "";        
+    }
+    updateStat();
+}
+
+function updateStat(){
+    document.getElementById("sX").innerHTML = stat.x;
+    document.getElementById("sO").innerHTML = stat.o;
+    document.getElementById("sD").innerHTML = stat.d;
+} */
+
+// let car = {
+//     name: "Volvo",
+//     year: 2019,
+//     colors: {
+//         first: "yellow",
+//         second: "blue"
+//     },
+//     color: [
+//         "black",
+//         "white",
+//         "red",
+//         "blue"
+//     ],
+//     hello: function(){
+//         document.writeln("Привет<br>");        
+//     }
+// };
+
+// console.log(car);
+// document.writeln(car.name + " " + car.color[1] + " " + car.colors.second);  // свойсто
+// car.hello();  // метод
+// hello()
+
+// // let fill = car.color.filter(function(elem){
+// //     return elem.length < 5;
+// // });
+// // document.writeln(fill + "<br>");
+
+// // let mas = car.color.map(function(elem, index, all){
+// //     return index + ") " + elem + " массив: " + all + "<br>";
+// // })
+// // document.writeln("<br>" + mas + "<br>");
+
+// // let mas1 = car.color.map(elem => elem.toUpperCase());
+// // document.writeln("<br>" + mas1 + "<br>");
+
+// let mas2 = Object.keys(car.colors).map(function(elem){
+//     return elem + ": " + car.colors[elem] + "<br>";
+// })
+
+// document.writeln("<br>" + mas2 + "<br>");
+
+
+// let calc = {
+//     num1: 5,
+//     num2: 6,
+//     calculate: function(){
+//         this.res = this.num1 * this.num2;        
+//     }
+// }
+
+
+// calc.calculate();
+// document.writeln(calc.res);
+
+/* let x = 15, y = 10;
+
+// let coords = {
+//     x: x,
+//     y: y,
+//     calcSq: function(){
+//         document.writeln(this.x * this.y);        
+//     }
+// }
+let coords = {x,y,
+    calcSq(){
+        document.writeln(this.x * this.y);        
+    }
+}
+
+coords.calcSq(); */
+
+// let user = {
+//     login: {
+//         firstName: 'Kate',
+//         lastName: "Pavlova"
+//     },
+//     psw: 'qwerty',
+//     role: 'guest'
+// }
+
+// let log = user.login.firstName;
+// console.log(log);
+
+// let {psw: password, login: {firstName: f, lastName: l}, role} = user;
+// document.writeln(f + " " + l + " " + password + " " + role);
+
+// let {login: {firstName: f, lastName: l}, ...rest} = user;
+// document.writeln(f + " " + l + " " + rest.psw + " " + rest.role);
+
+
+// Создать объект, который выиграл автомобиль (цвет случайным образом). В объекте хранится имя, массив цветов и марка автомобиля (свойства объекта). Вывод информации будет в методе
+// Игорь выиграл красный Bentley
