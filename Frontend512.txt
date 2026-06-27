@@ -462,3 +462,19 @@ console.log(mas[0]);  // 1
 
 let obj = {one: 1, two: 2};
 console.log(obj["one"]);  // 1
+
+Для создания нового репозитория
+git init
+git add .
+git commit -m "change"
+git remote add origin https://github.com/Helen-prog/qqq.git
+git push -u origin master
+
+
+SyntaxError
+
+ReferenceError
+TypeError
+RangeError
+
+throw

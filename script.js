@@ -5286,15 +5286,711 @@ coords.calcSq(); */
 //     role: 'guest'
 // }
 
-// let log = user.login.firstName;
-// console.log(log);
+
 
 // let {psw: password, login: {firstName: f, lastName: l}, role} = user;
 // document.writeln(f + " " + l + " " + password + " " + role);
 
-// let {login: {firstName: f, lastName: l}, ...rest} = user;
-// document.writeln(f + " " + l + " " + rest.psw + " " + rest.role);
+// let {psw, login: {firstName: f, lastName: l}, ...rest} = user;
+// document.writeln(f + " " + l + " " + psw + " " + rest.role);
+
+// let log = user.login.firstName;
+// console.log(log);
 
 
 // Создать объект, который выиграл автомобиль (цвет случайным образом). В объекте хранится имя, массив цветов и марка автомобиля (свойства объекта). Вывод информации будет в методе
 // Игорь выиграл красный Bentley
+
+// Функция-констуруктор
+// function Car(n, year){
+//     this.name = n;
+//     this.year = year;
+// }
+
+// Car.prototype.getAge = function(){
+//     return new Date().getFullYear() - this.year;
+// }
+
+// Car.prototype.color = "black";
+
+// let ford = new Car('Ford', 2019);
+// console.log(ford);
+// console.log(ford.getAge());
+// ford.color = "red";
+// console.log(ford.color);
+
+
+// let bmw = new Car('BMW', 2017);
+// console.log(bmw);
+// console.log(bmw.getAge());
+// console.log(bmw.color);
+
+
+// function User(pName, pAge){
+//     this.name = pName;
+//     this.age = pAge;
+//     this.displayInfo = function(){
+//         document.writeln("Имя: " + this.name + "; возраст: " + this.age + "<br>");        
+//     }
+// }
+
+// let tom = new User("Tom", 26);
+// tom.displayInfo();
+
+// let form = document.form1;
+// form.addEventListener("submit", event => {
+//     event.preventDefault();
+
+//     let title = form.title.value;
+//     let text = form.text.value;
+//     let description = form.description.value;
+
+//     // console.log(title, text);
+//     saveForm({title, text, description}); // {title: title, text: text}
+// })
+
+// // function saveForm(obj){
+// //     let {title, text, description} = obj;
+
+// // function saveForm({title, text, description}){
+
+// function saveForm(obj){
+//     let formData = {
+//         date: new Date().toLocaleDateString(),
+//         ...obj
+//     }
+
+//     console.log("Form data: ", formData);    
+// }
+
+/* let cardsArray = [
+    { name: 'card1', img: 'c0.gif' },
+    { name: 'card2', img: 'c1.gif' },
+    { name: 'card3', img: 'c2.gif' },
+    { name: 'card4', img: 'c3.gif' },
+    { name: 'card5', img: 'c4.gif' },
+    { name: 'card6', img: 'c5.gif' },
+    { name: 'card7', img: 'c6.gif' },
+    { name: 'card8', img: 'c7.gif' }
+];
+
+let firstCard = null;
+let secondCard = null;
+let lockBoard = false;
+
+function createBoard(){
+    let gameBoard = document.querySelector(".game-board");
+    let shuffledCards = [...cardsArray, ...cardsArray].sort(() => 0.5 - Math.random());
+
+    shuffledCards.forEach(card => {
+        let cardElement = document.createElement("div");
+        cardElement.classList.add("card");
+        cardElement.dataset.name = card.name;
+
+        let cardImage = document.createElement("img");
+        cardImage.src = card.img;
+        cardElement.append(cardImage);
+
+        cardElement.addEventListener('click', flipCard);
+        gameBoard.append(cardElement);
+    })
+
+}
+
+function flipCard(){
+    if(lockBoard){
+        return;
+    }
+    if(this === firstCard){
+        return;
+    }
+    this.classList.add("flipper");
+
+    if(!firstCard){
+       firstCard = this;
+       return; 
+    }
+    secondCard = this;
+    checkForMatch();
+}
+
+function checkForMatch(){
+    if(firstCard.dataset.name === secondCard.dataset.name){
+        disabledCard();
+    } else {
+        unflipCards();
+    }
+}
+
+function disabledCard(){
+    firstCard.removeEventListener("click", flipCard);
+    secondCard.removeEventListener("click", flipCard);
+    resetBoar();
+}
+
+function unflipCards(){
+    lockBoard = true;
+    setTimeout(() => {
+        firstCard.classList.remove("flipper");
+        secondCard.classList.remove("flipper");
+        resetBoar();
+    }, 1000);
+}
+
+function resetBoar(){
+    // [firstCard, secondCard, lockBoard] = [null, null, null];
+    firstCard = null;
+    secondCard = null;
+    lockBoard = null;
+}
+
+createBoard(); */
+
+// let a = 5;
+// let b = 10;
+// console.log("a:", a);
+// console.log("b:", b);
+// // a, b = b, a;  // не работает
+// [a, b] = [b, a];
+// console.log("a:", a);
+// console.log("b:", b);
+
+// let mas = [5, 3, 2];
+// for (let i = 0; i < mas.length; i++) {
+//     mas[i] = 0;
+// }
+// console.log(mas);
+
+// const week = {
+//     name: "John"
+// }
+// week.name = "Peter";
+
+// // const week = ["qqq", "www"];
+// // week[0] = "Привет";
+// // week = "Строка"
+
+// console.log(week);
+
+// const book = {title: 'Дюна'};
+// // const anotherBook = {title: 'Дюна'};
+// const edition = {published: 2025, title: "Вьюга"}
+// const anotherBook = Object.assign({}, book, edition);
+
+// console.log(book == anotherBook);
+
+// // anotherBook['price'] = 315;
+// console.log(book);
+// console.log(edition);
+// console.log(anotherBook);
+
+
+// let a = 5;
+// let b = 5;
+// console.log(a == b);
+
+// const mas1 = [1,2,3];
+// const mas2 = [1,2,3];
+// console.log(mas1 == mas2);
+// console.log(mas1);
+
+
+
+// function Automobile(manufact, model, year, color){
+//     this.manufact = manufact;
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
+
+//     this.whatColor = function(){
+//         document.writeln("Цвет машины: " + this.color + " ")
+//     }
+//     this.autoInfo = function(){
+//         document.writeln("Модель машины: " + this.manufact + " " + this.model + "<br>" + "Год выпуска: " + this.year + "<br>" + "Производитель автомобиля: " + this.manufact + "<br>")
+//     }
+// }
+
+// let mas = [
+//     new Automobile("Nissan", "Skyline", 2007, "Red"), 
+//     new Automobile("Toyota", "Corolla", 2009, "Black"), 
+//     new Automobile("Volkswagen", "Golf", 2009, "Blue")
+// ];
+
+// console.log(mas);
+// let nissan = new Automobile("Nissan", "Skyline", 2007, "Red");
+// let toyota = new Automobile("Toyota", "Corolla", 2009, "Black");
+// let volk = new Automobile("Volkswagen", "Golf", 2009, "Blue");
+
+// let mas = [nissan, toyota, volk];
+
+// for (let i = 0; i < mas.length; i++) {
+//      mas[i].whatColor();
+//      mas[i].autoInfo();
+//      document.writeln("<br>");     
+// }
+
+
+
+// nissan.whatColor()
+// nissan.autoInfo();
+// toyota.whatColor();
+// toyota.autoInfo();
+// volk.whatColor();
+// volk.autoInfo();
+
+// const personData = [["name", "Сергей"], ["age", 37]];
+// console.log(personData);
+// const person = Object.fromEntries(personData);
+// console.log(person);
+
+
+// const first = null;
+// const second = {name: "Bob"}
+
+// function printName(person){
+//     console.log(person?.name);    
+// }
+
+// printName(first);
+// printName(second);
+
+// const first = null;
+// const second = {
+//     name: "Bob",
+//     sayHi(){
+//         console.log(`Hi! I am ${this.name}`);        
+//     }
+// };
+
+// function printName(person){
+//     console.log(person?.name);    
+// }
+
+// printName(first);
+// printName(second);
+// first?.sayHi();
+// second?.sayHi();
+
+
+// const obj = {name: "Ирина"};
+// Object.preventExtensions(obj);
+// obj.age = 25;
+// console.log(obj);
+
+
+// const obj = {name: "Ирина"};
+// Object.freeze(obj);
+// // obj.name = "Марина";
+// obj.age = 25;
+// console.log(obj);
+
+
+// Контекст
+
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo: function(){
+//         console.log("name:", this.name);
+//         console.log("age:", this.age);
+//         console.log("job:", this.job);        
+//     }
+// }
+
+// person.displayInfo();
+
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo: function (ms) {
+//         let self = this;
+
+//         setTimeout(function () {
+//             console.log(self);
+//             console.log("name:", self.name);
+//             console.log("age:", self.age);
+//             console.log("job:", self.job);
+//         }, ms);
+//     }
+// }
+// // console.log(this);
+
+// person.displayInfo(2000);
+
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo: function (ms) {  
+
+//         setTimeout(function () {
+//             console.log(this);
+//             console.log("name:", this.name);
+//             console.log("age:", this.age);
+//             console.log("job:", this.job);
+//         }.bind(this), ms);
+//     }
+// }
+
+// person.displayInfo(2000);
+
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo: function (ms) {  
+
+//         setTimeout(() => {
+//             console.log(this);
+//             console.log("name:", this.name);
+//             console.log("age:", this.age);
+//             console.log("job:", this.job);
+//         }, ms);
+//     }
+// }
+
+// person.displayInfo(2000);
+
+// let person = {
+//     age: 24,
+//     name: "Irina",
+//     job: "Programmer",
+//     displayInfo(ms) { 
+//         console.log(this);
+
+//         setTimeout(() => {
+//             console.log(this);
+//             console.log("name:", this.name);
+//             console.log("age:", this.age);
+//             console.log("job:", this.job);
+//         }, ms);
+//     }
+// }
+
+// person.displayInfo(2000);
+
+// let h = document.querySelector("h1");
+// h.addEventListener("click", () => {
+//     h.style.color = "red";
+// })
+
+// window.alert("Hello");
+
+// window.document.querySelector("h1").style.color = "red";
+
+// let modal = document.querySelector("#modal");
+
+// document.querySelector("#btn").addEventListener("click", function () {
+//     modal.style.display = "block";
+// })
+
+// document.querySelector(".close").addEventListener("click", function () {
+//     modal.style.display = "none";
+// })
+
+// window.addEventListener("click", function (event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// })
+
+// let w = document.documentElement.clientWidth;
+// let h = document.documentElement.clientHeight;
+
+// document.querySelector("#window").innerHTML = "Ширина окна: " + w + ", высота окна: " + h;
+
+// console.log("Ширина окна", window.innerWidth);
+// console.log("Высота окна", window.innerHeight);
+
+
+// let box = document.querySelector(".box");
+// // let width = box.clientWidth;
+// // let height = box.clientHeight;
+// // let width = box.offsetWidth;
+// // let height = box.offsetHeight;
+// let width = box.scrollWidth;
+// let height = box.scrollHeight;
+
+// // console.log(width, height);
+// let hh = box.offsetHeight;
+// let flag;
+
+// document.querySelector("button").addEventListener("click", function () {
+//    /*  if (!flag) {
+//         box.style.height = box.scrollHeight + "px";                
+//     } else {
+//         box.style.height = hh + "px";  
+//     }
+//     flag = !flag; */
+//     // console.log(box.scrollTop);
+//     // console.log(box.getBoundingClientRect());
+//     // console.log(box.getBoundingClientRect().top);
+//     // console.log("offsetTop", box.offsetTop);
+
+//     if(!flag){
+//         box.style.overflow = "hidden";
+//     } else {
+//         box.style.overflow = "";
+//     }
+//     flag = !flag;
+
+// })
+
+
+// window.addEventListener("scroll", myFunction);
+
+// function myFunction(){
+//     let winScroll = document.documentElement.scrollTop;
+//     let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+//     let scrolled = winScroll / height * 100;
+
+//     document.querySelector("#myBar").style.width = scrolled + "%";
+
+//     document.querySelector("img").style.transform = "translate("+ (document.documentElement.clientWidth - 94) * scrolled / 100 +"px, 0px)";
+// }
+
+// let win = null;
+
+// let open = document.querySelector("#show");
+// open.addEventListener("click", function(){
+//     // window.open("https://yandex.com");
+//     win = window.open(
+//         "str.html", 
+//         "new_window",
+//         "width=420,height=220,left=200,top=200,resizable=yes"
+//     );
+//     console.log(win);
+
+// });
+
+// let cls = document.querySelector("#close");
+// cls.addEventListener("click", function(){
+//     if(typeof win == "object"){
+//          win.close();
+//     }   
+// })
+
+// console.log(window.location);
+// console.log(location);
+// // console.log(document.location);
+// console.log(location.href);
+// alert(location);
+
+// location.href = "https://htmlbook.ru";
+
+// let open = document.querySelector("#show");
+// open.addEventListener("click", function(){
+//     // window.location.assign("https://htmlbook.ru");
+//     window.location.assign("str.html");
+// })
+
+// let btn = document.getElementById("btn");
+// btn.addEventListener("click", () => {
+//     let url = document.getElementById("url").value;
+//     location.assign(url);
+//     // location.replace(url);
+//     // location.reload(url);
+// })
+
+// console.log("В истории " + history.length + " страниц");
+// // history.back();
+// // history.forward();
+// history.go(-1);
+
+// console.log(window.navigator.userAgent);
+// console.log(window.screen);
+
+
+/* try{
+    // код, гда может произойти ошибка
+} catch (error){
+    // выполнится, если ошибка произошла
+} finally {
+    // выполнится в любом случае
+}
+ */
+
+// let a = 5;
+
+// try{
+//     console.log(b);
+// } catch (error){
+//     console.error("Ошибка:", error.message);
+// }
+
+// console.log(a);
+
+// try{
+//     let num = 16;
+//     console.log(num());
+// } catch (e){
+//     console.log(e.name);
+//     console.log(e.message);
+//     console.log(e.stack);    
+// }
+
+// try{
+//     let arr = new Array(-5);
+// } catch(err){
+//     let text = err.name + "<br>" + err.message + "<br>" + err.stack;
+//     document.getElementById("demo").innerHTML = text;
+// }
+
+
+// setTimeout(function () {
+//     try {
+//         alert(x);
+//         alert(2 + 2);
+//     } catch (e) {
+//         alert(e.name + ": " + e.message);
+//     }
+// }, 10);
+
+
+// try {
+//     // alert(x);
+//     alert(2 + 2);
+// } catch (e) {
+//     alert(e.name + ": " + e.message);
+// } finally{
+//     alert("Код в блоке finally");
+// }
+
+// let flag = false;
+// let but = document.querySelector("button");
+
+// but.addEventListener("click", function(){
+//     try{
+//         if(!flag){
+//             document.body.style.background = "12px";
+//         } else {
+//             document.body.style.background = "greenyellow";
+//         }
+//     } catch (e){
+//         alert(e);
+//     } finally{
+//         flag = !flag;
+//     }
+// })
+
+// function divide(a, b){
+//     if(b == 0){
+//         throw new Error("Делить на 0 нельзя");
+//     }
+//     return a / b;
+// }
+
+// let res;
+// try{
+//     res = divide(5, 0);
+//     console.log(res);    
+// } catch(error){
+//     console.log(error.name + ": " + error.message + ", stack: " + error.stack);    
+// }
+
+// let but = document.querySelector("button");
+// but.addEventListener("click", myFunction);
+
+// function myFunction(){
+//     let message = document.getElementById("txt");
+//     let x = document.getElementById("demo").value;
+//     message.innerHTML = "";
+//     try{
+//         if(x == ""){
+//             throw "пусто";
+//         } 
+//         if(isNaN(x)){
+//             throw "не число";
+//         }
+//         if(x < 5){
+//             throw "слишком мало";
+//         }
+//         if(x > 10){
+//             throw "слишком много";
+//         }
+//     } catch(err){
+//         message.innerHTML = "Вы ввели " + err;
+//     }
+// }
+
+// function calculate(a, b){
+//     if(typeof a != "number"){
+//         throw "a - не число";
+//     }
+//     return a + (b ** 2) / 3;
+// }
+
+// console.log(calculate("2", 3));
+// console.log(calculate(5, 3));
+
+// Классы
+
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+
+// const person1 = new Person("Андрей", 23);
+// console.log(person1);
+
+// class Person2 {
+//     constructor(name, age) {
+//         this.name = name;
+//         this.age = age;
+//     }
+
+//     sayHi(){
+//         document.writeln("Привет, " + this.name + "!");
+//     }
+// }
+
+// const person2 = new Person2("Андрей", 23);
+// console.log(person2);
+// person2.sayHi();
+// alert(typeof Person2);
+
+// let User = class {
+//     sayHi(){
+//         alert("Привет");
+//     }
+// }
+
+// let user = new User();
+// user.sayHi();
+// function makeClass(text) {
+//     return class {
+//         sayHi() {
+//             alert(text);
+//         }
+//     }
+// }
+
+// let User = makeClass("Привет");
+// new User().sayHi();
+
+class Rectangle{
+    constructor(height, width){
+        this.height = height;
+        this.width = width;
+    }
+
+    area(){
+        return this.height * this.width;
+    }
+}
+
+const rectangle = new Rectangle(10, 20);
+rectangle.color = "red";
+console.log(rectangle);
+
+console.log(rectangle.area());
+
+const rectangle1 = new Rectangle(40, 30);
+console.log(rectangle1);
+
+// Создать два класса Круг и Треугольник. Найти площадь и переметр.
+
+
