@@ -240,26 +240,46 @@ const view = new View(root, 320, 640, 20, 10);
 // console.log(game.playfield);
 
 document.addEventListener("keydown", event => {
-    switch (event.which) {  // keyCode
-        case 37:
-            game.moveIsLeft();
-            view.render(game.getState());
-            break;
-        case 38:
-            game.rotationPiece();
-            view.render(game.getState());
-            break;
-        case 39:
-            game.moveIsRight();
-            view.render(game.getState());
-            break;
-        case 40:
-            game.moveIsDown();
-            view.render(game.getState());
-            break;
-    }
+    // switch (event.which) {  // keyCode
+    //     case 37:
+    //         game.moveIsLeft();
+    //         view.render(game.getState());
+    //         break;
+    //     case 38:
+    //         game.rotationPiece();
+    //         view.render(game.getState());
+    //         break;
+    //     case 39:
+    //         game.moveIsRight();
+    //         view.render(game.getState());
+    //         break;
+    //     case 40:
+    //         game.moveIsDown();
+    //         view.render(game.getState());
+    //         break;
+    // }
 
     // switch (event.key) {  // keyCode
+    //     case "ArrowLeft":
+    //         game.moveIsLeft();
+    //         view.render(game.getState());
+    //         break;
+    //     case "ArrowUp":
+    //         game.rotationPiece();
+    //         view.render(game.getState());
+    //         break;
+    //     case "ArrowRight":
+    //         game.moveIsRight();
+    //         view.render(game.getState());
+    //         break;
+    //     case "ArrowDown":
+    //         game.moveIsDown();
+    //         view.render(game.getState());
+    //         break;
+    // }
+
+
+    //  switch (event.code) {  // keyCode
     //     case "ArrowLeft":
     //         game.moveIsLeft();
     //         view.render(game.getState());
