@@ -258,4 +258,23 @@ document.addEventListener("keydown", event => {
             view.render(game.getState());
             break;
     }
+
+    // switch (event.key) {  // keyCode
+    //     case "ArrowLeft":
+    //         game.moveIsLeft();
+    //         view.render(game.getState());
+    //         break;
+    //     case "ArrowUp":
+    //         game.rotationPiece();
+    //         view.render(game.getState());
+    //         break;
+    //     case "ArrowRight":
+    //         game.moveIsRight();
+    //         view.render(game.getState());
+    //         break;
+    //     case "ArrowDown":
+    //         game.moveIsDown();
+    //         view.render(game.getState());
+    //         break;
+    // }
 })
