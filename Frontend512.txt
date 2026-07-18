@@ -478,3 +478,9 @@ TypeError
 RangeError
 
 throw
+
+Родительский (супер-класс)
+	Дочерний (класс-наследник)
+
+
+<canvas></canvas>
