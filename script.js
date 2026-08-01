@@ -6744,5 +6744,5 @@ canvas.addEventListener("mouseup", function (e) {
 //     alert("Cookies включены");
 // }
 
-document.cookie = "user=Сергей";
-alert(document.cookie);
+// document.cookie = "user=Сергей";
+// alert(document.cookie);
