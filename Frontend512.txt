@@ -488,3 +488,8 @@ throw
 
 Создать игру "Змейка"
 
+git init
+git add -A
+git commit -m "game"
+git remote add origin https://github.com/Helen-prog/Tetris.git
+git push -u origin master
