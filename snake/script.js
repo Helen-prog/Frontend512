@@ -219,6 +219,11 @@ class Game {
 
         if (head.x === this.foot.x && head.y === this.foot.y) {
             this.foot = this.getRandomFootPosition();
+
+            // if(){
+            //     this.foot = this.getRandomFootPosition();
+            // }
+
             this.score++;
             this.scoreEl.textContent = `Счет: ${this.score}`;
             if (this.gameSpeed > 50) {
