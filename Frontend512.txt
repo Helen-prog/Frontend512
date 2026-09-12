@@ -493,3 +493,94 @@ git add -A
 git commit -m "game"
 git remote add origin https://github.com/Helen-prog/Tetris.git
 git push -u origin master
+
+
+JSON – представление (нотация) объектов JavaScript. Это текстовый формат для хранения и обмена структурированными данными, часто передаются по сети.
+
+{
+ "ключ": "значение"
+}
+
+JSON.stringify() - преобразует объект JavaScript в объект JSON (сериализация)
+JSON.parse() - преобразует объект JSON в объект JavaScript (десериализация)
+
+
+user=value; username=value
+["user=value"," username=value"]
+[["user", "value"], [" username", "value"]]
+
+
+sessionStorage
+localStorage
+
+some()
+
+AJAX 
+
+Asynchronous
+JavaScript
+And
+XML (JSON)
+
+
+current.json
+
+
+Event Loop
+
+
+Promise (обещание)
+
+async / await
+
+WIN + R => cmd
+node -v
+
+math.js
+hello.js
+messenger.js
+
+contstants.js
+
+before.js
+after.js
+
+Angular
+React
+Vue
+
+
+SPA
+JSX = JavaScript + XML
+Виртуальный DOM
+
+Win + R => cmd
+node -v
+
+react
+	first
+	
+npx create-react-app .
+npx create-react-app my_app
+
+Windows PowerShell c правами администратора
+Set-ExecutionPolicy RemoteSigned
+
+npm start
+- запуск приложения
+
+javascript   javascriptreact
+
+src
+	components
+		header
+			Header.js
+			Header.css
+		article
+			Article.js
+			Article.css
+		footer
+			Footer.js
+	
+Ctrl + C
+- остановить сервер

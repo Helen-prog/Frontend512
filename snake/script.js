@@ -1,130 +1,133 @@
-// const canvas = document.getElementById("canvas");
-// const ctx = canvas.getContext("2d");
-// const scoreEl = document.getElementById("score");
-// const startButton = document.getElementById("startButton");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const scoreEl = document.getElementById("score");
+const startButton = document.getElementById("startButton");
 
-// const gridSize = 20;  // размер одного сегмента
-// let snake, direction, foot, score, gameSpeed, gameRunning;
+const gridSize = 20;  // размер одного сегмента
+let snake, direction, foot, score, gameSpeed, gameRunning;
 
-// function startGame() {
-//     snake = [{
-//         x: 200,
-//         y: 200
-//     }];
+function startGame() {
+    snake = [{
+        x: 200,
+        y: 200
+    }];
 
-//     direction = "RIGHT";
-//     score = 0;
-//     gameSpeed = 200;
-//     foot = getRandomFootPosition();
-//     gameRunning = true;
+    direction = "RIGHT";
+    score = 0;
+    gameSpeed = 200;
+    foot = getRandomFootPosition();
+    gameRunning = true;
 
-//     scoreEl.textContent = "Счет: 0";
-//     startButton.style.display = "none";
+    scoreEl.textContent = "Счет: 0";
+    startButton.style.display = "none";
 
-//     gameLoop();
-// }
+    gameLoop();
+}
 
-// function getRandomFootPosition() {
-//     return {
-//         x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
-//         y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
-//     }
-// }
+function getRandomFootPosition() {
+    return {
+        x: Math.floor(Math.random() * (canvas.width / gridSize)) * gridSize,
+        y: Math.floor(Math.random() * (canvas.height / gridSize)) * gridSize
+    }
+}
 
-// function gameOver() {
-//     gameRunning = false;
-//     let result = document.createElement("p");
-//     result.innerHTML = `<span style="color: red">Игра окончена! Ваш счет: ${score}</span>`;
-//     scoreEl.prepend(result);
-//     startButton.style.display = "inline";
-// }
+function gameOver() {
+    gameRunning = false;
+    let result = document.createElement("p");
+    result.innerHTML = `<span style="color: red">Игра окончена! Ваш счет: ${score}</span>`;
+    scoreEl.prepend(result);
+    startButton.style.display = "inline";
+}
 
-// function gameLoop() {
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-//     ctx.fillStyle = "purple";
-//     ctx.fillRect(foot.x, foot.y, gridSize, gridSize);
-//     ctx.fillStyle = "black";
-//     ctx.strokeRect(foot.x, foot.y, gridSize, gridSize);
+    ctx.fillStyle = "purple";
+    ctx.fillRect(foot.x, foot.y, gridSize, gridSize);
+    ctx.fillStyle = "black";
+    ctx.strokeRect(foot.x, foot.y, gridSize, gridSize);
 
-//     snake.forEach(segment => {
-//         ctx.fillStyle = "blue";
-//         ctx.fillRect(segment.x, segment.y, gridSize, gridSize);
-//         ctx.fillStyle = "black";
-//         ctx.strokeRect(segment.x, segment.y, gridSize, gridSize);
-//     });
+    snake.forEach(segment => {
+        ctx.fillStyle = "blue";
+        ctx.fillRect(segment.x, segment.y, gridSize, gridSize);
+        ctx.fillStyle = "black";
+        ctx.strokeRect(segment.x, segment.y, gridSize, gridSize);
+    });
 
-//     let head = { ...snake[0] };
+    let head = { ...snake[0] };
 
-//     if (direction === "UP") {
-//         head.y -= gridSize;
-//     }
-//     if (direction === "DOWN") {
-//         head.y += gridSize;
-//     }
-//     if (direction === "LEFT") {
-//         head.x -= gridSize;
-//     }
-//     if (direction === "RIGHT") {
-//         head.x += gridSize;
-//     }
+    if (direction === "UP") {
+        head.y -= gridSize;
+    }
+    if (direction === "DOWN") {
+        head.y += gridSize;
+    }
+    if (direction === "LEFT") {
+        head.x -= gridSize;
+    }
+    if (direction === "RIGHT") {
+        head.x += gridSize;
+    }
 
-//     if (head.x < 0 || head.x >= canvas.width || head.y >= canvas.height || head.y < 0) {
-//         gameOver();
-//         return;
-//     }
+    if (head.x < 0 || head.x >= canvas.width || head.y >= canvas.height || head.y < 0) {
+        gameOver();
+        return;
+    }
 
-//     for (let i = 1; i < snake.length; i++) {
-//         if(head.x === snake[i].x && head.y === snake[i].y){
-//             gameOver();
-//             return;
-//         }
-//     }
+    for (let i = 1; i < snake.length; i++) {
+        if (head.x === snake[i].x && head.y === snake[i].y) {
+            gameOver();
+            return;
+        }
+    }
 
-//     snake.unshift(head);
+    snake.unshift(head);
 
-//     if (head.x === foot.x && head.y === foot.y) {
-//         foot = getRandomFootPosition();
-//         score++;
-//         scoreEl.textContent = `Счет: ${score}`;
-//         if (gameSpeed > 50) {
-//             gameSpeed -= 5;
-//         }
-//     } else {
-//         snake.pop();
-//     }
+    if (head.x === foot.x && head.y === foot.y) {
+        do {
+            foot = getRandomFootPosition();
+        } while (snake.some(segment => segment.x === foot.x && segment.y === foot.y));
 
-//     if (snake.length > 0) {
-//         setTimeout(gameLoop, gameSpeed);
-//     }
+        score++;
+        scoreEl.textContent = `Счет: ${score}`;
+        if (gameSpeed > 50) {
+            gameSpeed -= 5;
+        }
+    } else {
+        snake.pop();
+    }
 
-//     // console.log(snake);
-// }
+    if (snake.length > 0) {
+        setTimeout(gameLoop, gameSpeed);
+    }
 
-// function changeDirection(event) {
-//     const key = event.key;
+    // console.log(snake);
+}
 
-//     if (key == "ArrowUp" && direction !== "DOWN") {
-//         direction = "UP";
-//     } else if (key == "ArrowDown" && direction !== "UP") {
-//         direction = "DOWN";
-//     } else if (key == "ArrowLeft" && direction !== "RIGHT") {
-//         direction = "LEFT";
-//     } else if (key == "ArrowRight" && direction !== "LEFT") {
-//         direction = "RIGHT";
-//     }
+function changeDirection(event) {
+    const key = event.key;
 
-//     // console.log(direction);    
-// }
+    if (key == "ArrowUp" && direction !== "DOWN") {
+        direction = "UP";
+    } else if (key == "ArrowDown" && direction !== "UP") {
+        direction = "DOWN";
+    } else if (key == "ArrowLeft" && direction !== "RIGHT") {
+        direction = "LEFT";
+    } else if (key == "ArrowRight" && direction !== "LEFT") {
+        direction = "RIGHT";
+    }
 
-// document.addEventListener("keydown", changeDirection);
-// startButton.addEventListener("click", startGame);
+    // console.log(direction);    
+}
+
+document.addEventListener("keydown", changeDirection);
+startButton.addEventListener("click", startGame);
 
 
 
 
 // =================================================
-class Game {
+/* class Game {
     constructor(element, gameBoard, size) {
         this.element = element;
         this.width = gameBoard;
@@ -218,7 +221,11 @@ class Game {
         this.snake.unshift(head);
 
         if (head.x === this.foot.x && head.y === this.foot.y) {
-            this.foot = this.getRandomFootPosition();
+            
+            do {  // 
+                this.foot = this.getRandomFootPosition();
+            } while (this.snake.some(segment => segment.x === this.foot.x && segment.y === this.foot.y));  // 
+
 
             // if(){
             //     this.foot = this.getRandomFootPosition();
@@ -274,3 +281,4 @@ game.startButton.addEventListener("click", () => game.startGame());
 // game.startButton.addEventListener("click", function () {
 //     game.startGame();
 // });
+ */

@@ -6746,3 +6746,780 @@ canvas.addEventListener("mouseup", function (e) {
 
 // document.cookie = "user=Сергей";
 // alert(document.cookie);
+
+
+// localStorage.setItem("data", 1);
+// alert(localStorage.getItem("data"));
+
+/* localStorage.test = 2;
+delete localStorage.test;
+alert(localStorage.test); */
+
+// localStorage.setItem("username", "Марина");
+// localStorage.setItem("surname", "Ветрова");
+// // alert(localStorage.length);
+
+// for(let i = 0; i < localStorage.length; i++){
+//     let k = localStorage.key(i);
+//     console.log(k + ": " + localStorage.getItem(k));    
+// }
+
+// console.log("\n");
+
+// let keys = Object.keys(localStorage); // ["username", "data", "surname"]
+// for(let key of keys){
+//     console.log(key + ": " + localStorage.getItem(key) + ", тип: " + typeof localStorage.getItem(key));    
+// }
+
+// localStorage.user = {name: "Сергей"}
+// console.log(localStorage.user);
+
+// localStorage.user = JSON.stringify({name: "Сергей"});
+// let user = JSON.parse(localStorage.user);
+// console.log(user.name);
+
+// localStorage.removeItem("username");
+
+// console.log(localStorage.clear());
+
+// let board = document.querySelector("div");
+// let value = document.querySelector("span");
+// let counter;
+
+// if(localStorage.getItem("count") > 0){
+//     counter = localStorage.getItem("count");
+//     value.textContent = counter;
+// } else{
+//     counter = 0;
+// }
+
+// board.addEventListener("click", function(){
+//     counter++;
+//     value.textContent = counter;
+//     localStorage.setItem("count", counter);
+// });
+
+// board.addEventListener("contextmenu", function(){
+//     localStorage.clear();
+//     counter = 0;
+//     value.textContent = counter;
+// })
+
+
+// const form = document.getElementById("form1");
+// const formFields = form.elements;
+// const submitBtn = form.querySelector("[type='submit']");
+
+// function attachEvents() {
+//     for (let i = 0; i < formFields.length; i++) {
+//         formFields[i].addEventListener("change", changeHandle);
+//     }
+// }
+
+// function changeHandle() {
+//     if (this.type != "checkbox") {
+//         console.log(this.name, this.value);
+//         localStorage.setItem(this.name, this.value);
+//     } else {
+//         console.log(this.name, this.checked);
+//         localStorage.setItem(this.name, this.checked);
+//     }
+// }
+
+// checkedStorage();
+
+// function checkedStorage() {
+//     for (let i = 0; i < formFields.length; i++) {
+//         if (formFields[i].type !== "submit") {
+//             if (formFields[i].type === "checkbox") {
+//                 formFields[i].checked = localStorage.getItem(formFields[i].name);
+//             } else {
+//                 formFields[i].value = localStorage.getItem(formFields[i].name);
+//             }
+//         }
+//     }
+
+//     attachEvents();
+// }
+
+
+// submitBtn.addEventListener("click", clearStorage);
+
+// function clearStorage(){
+//     localStorage.clear();
+// }
+
+/* let list = document.querySelector("#list");
+let but = document.querySelector("button");
+
+but.addEventListener("click", addNote);
+
+function addNote(){
+    let name = prompt("Имя записи", "");
+
+    notes[name] = "";
+    addToList(name);
+    saveToStorage();
+    list.value = name;
+    current.value = notes[name];
+}
+
+function addToList(name){
+    let option = document.createElement("option");
+    option.textContent = name;
+    list.append(option);
+}
+
+function saveToStorage(){
+    localStorage.setItem("notes", JSON.stringify(notes));
+}
+
+let notes = JSON.parse(localStorage.getItem("notes")) || {"что купить": ""}
+
+for(let name in notes){
+    addToList(name);
+}
+
+let current = document.querySelector("#currentnote");
+current.value = notes[list.value];
+
+list.addEventListener("change", function(){
+    current.value = notes[list.value];
+});
+
+current.addEventListener("change", function(){
+    notes[list.value] = current.value;
+    saveToStorage();
+}) */
+
+// sessionStorage.setItem("test", 1);
+// console.log(sessionStorage.getItem("test"));
+
+// sessionStorage.setItem(
+//     "user",
+//     JSON.stringify({
+//         name: "Igor",
+//         age: 23,
+//         isDeveloper: true
+//     })
+// )
+
+// console.log(sessionStorage.getItem("user"));
+// console.log("user:", JSON.parse(sessionStorage.getItem("user")));
+
+// sessionStorage.removeItem("test");
+
+// sessionStorage.clear();
+
+
+// class ThemeSwitcher{
+//     constructor(){
+//         this.selectors = {stitcherThemeButton: '[data-switcher]'};
+//         this.thems = {
+//             dark: 'dark',
+//             light: 'light'
+//         };
+
+//         this.stateClasses = {isDarkTheme: "is-dark-theme"};
+
+//         this.storageKey = "theme";
+
+//         this.switchThemeButtonElement = document.querySelector(this.selectors.stitcherThemeButton);
+
+//         this.setInitialTheme();
+//         this.bindEvents();
+//     }
+
+//     get isDarkThemeCached(){
+//         return localStorage.getItem(this.storageKey) === this.thems.dark;
+//     }
+
+//     setInitialTheme(){
+//         document.documentElement.classList.toggle(this.stateClasses.isDarkTheme, this.isDarkThemeCached);
+//     }
+
+//     onClick = () => {
+//         localStorage.setItem(
+//             this.storageKey,
+//             this.isDarkThemeCached ? this.thems.light : this.thems.dark
+//         )
+
+//         document.documentElement.classList.toggle(this.stateClasses.isDarkTheme);
+//     }
+
+//     bindEvents(){
+//         this.switchThemeButtonElement.addEventListener("click", this.onClick);
+//     }
+// }
+
+// new ThemeSwitcher();
+
+// const sum1 = 120323;
+// const sum2 = 100200200;
+// const sum3 = 1600.33;
+
+// const num = 0.1;
+
+// document.writeln(`
+//     ${sum1.toLocaleString()} <br>
+//     ${sum2.toLocaleString("ru")} <br>
+//     ${sum3.toLocaleString("en")} <br>
+//     `);
+
+// document.writeln(`<div>
+//     ${sum1.toLocaleString({
+//        style: 'decimal' 
+//     })}<br>
+//     ${num.toLocaleString("ru", {
+//         style: "percent"
+//     })}<br>
+//     ${sum2.toLocaleString("ru",{
+//         style: "currency",
+//         currency: "rub"
+//     })}<br>
+//     ${sum3.toLocaleString("ru",{
+//         style: "currency",
+//         currency: "USD",
+//         currencyDisplay: "name"
+//     })}<br>
+//     ${sum3.toLocaleString("ru",{
+//         style: "currency",
+//         currency: "EUR",
+//         currencyDisplay: "name"
+//     })}
+//     </div>`);
+
+
+// document.writeln(`<div>
+//     ${new Intl.NumberFormat("ru", {
+//     style: "currency",
+//     currency: "EUR",
+//     currencyDisplay: "name",
+//     minimumFractionDigits: 0
+// }).format(sum2)}<br>
+//     </div>`);
+
+
+// const toEuro = new Intl.NumberFormat("ru", {
+//     style: "currency",
+//     currency: "EUR",
+//     currencyDisplay: "name",
+//     minimumFractionDigits: 0
+// });
+
+// document.writeln(`<div>${toEuro.format(sum2)}</div>`);
+// document.writeln(`<div>${toEuro.format(sum1)}</div>`);
+// document.writeln(`<div>${toEuro.format(sum3)}</div>`);
+
+
+// const now = new Date();
+
+// const locale = navigator.language;
+
+// const dateOptions = {
+//     day: "2-digit",  // "numeric"
+//     month: "long",  // "2-digit" | "short"
+//     year: "2-digit",  // "numeric"
+//     era: "long",
+//     weekday: "long",
+//     timeZoneName: "short",
+//     hour: "2-digit", // "numeric"
+//     hour12: true,
+//     minute: "2-digit",
+//     second: "2-digit"
+// }
+
+// const UserDate = new Intl.DateTimeFormat("locale", dateOptions);
+// const RuDate = new Intl.DateTimeFormat("ru", dateOptions);
+// const USDate = new Intl.DateTimeFormat("en-US", dateOptions);
+// const UKDate = new Intl.DateTimeFormat("en-UK", dateOptions);
+
+// document.writeln(`<ul>
+//         <li>${RuDate.format(now)}</li>    
+//         <li>${USDate.format(now)}</li>    
+//         <li>${UKDate.format(now)}</li>   
+//         <li>${UserDate.format(now)}</li> 
+//     </ul>`);
+
+
+// const rtf = new Intl.RelativeTimeFormat("ru", {
+//     numeric: "auto", // 'always',
+//     style: "short", // "long",
+//     localeMatcher: 'best fit'
+// });
+
+// console.log(rtf.format(1, "minute"));
+// console.log(rtf.format(1, "day"));
+// console.log(rtf.format(-1, "day"));
+// console.log(rtf.format(2, "day"));
+// console.log(rtf.format(-2, "day"));
+// console.log(rtf.format(-20, "day"));
+
+// function getRelativeTimeString(date, lang=navigator.language){
+//     const timeMs = typeof date === 'number' ? date : date.getTime();
+
+//     const deltaSeconds = Math.round((timeMs - Date.now()) / 1000);
+
+//     const cutoffs = [60, 3600, 86400, 86400 * 7, 86400 * 30, 86400 * 365, Infinity];
+
+//     const units = ["second", "minute", "hour", "day", "week", "month", "year"];
+
+//     const unitIndex = cutoffs.findIndex(cutoff => cutoff > Math.abs(deltaSeconds));
+
+//     const divisor = unitIndex ? cutoffs[unitIndex - 1] : 1;
+
+//     const rtf = new Intl.RelativeTimeFormat(lang, {numeric: "auto"});
+
+//     return rtf.format(Math.floor(deltaSeconds / divisor), units[unitIndex]);
+// }
+
+// console.log(getRelativeTimeString(new Date("2026-08-23T00:55:04"), "ru"));
+// console.log(getRelativeTimeString(new Date("2026-09-23"), "ru"));
+// console.log(getRelativeTimeString(new Date("2026-08-18"), "ru"));
+
+// const formatter = new Intl.NumberFormat("ru", {
+//     style: "unit",
+//     unit: "liter",
+//     unitDisplay: "long" // "narrow", "short"
+// });
+
+// document.writeln(`<ul>
+//         <li>${formatter.format(100)}</li>    
+//         <li>${formatter.format(101)}</li>    
+//         <li>${formatter.format(102)}</li>    
+//         <li>${formatter.format(105)}</li>    
+//         <li>${formatter.format(108)}</li>    
+//         <li>${formatter.format(111)}</li>    
+//         <li>${formatter.format(121)}</li>    
+//     </ul>`);
+
+// Map Set
+
+// let obj = {};
+
+// obj[{id: 1}] = "first";
+// obj[{id: 2}] = "second";
+
+// console.log(obj);
+
+
+
+// let obj = {40: "число", true: "boolean"};
+// console.log(Object.keys(obj).length);
+
+// let obj = { "1": "one", 1: "один"};
+
+// console.log(obj);
+
+// let map = new Map();
+// let obj = {7: "семь"};
+// let mas = [3, 4];
+// map.set(5, "число");
+// map.set("5", "строка");
+// map.set(mas, "массив");
+// map.set(obj, "объект");
+
+
+// console.log(map);
+// console.log(map.get(5));
+// console.log(map.get("5"));
+// console.log(map.get(mas));
+// console.log(map.get(obj));
+
+// console.log(map.size);
+
+// console.log(map.has(5));
+
+// map.delete(mas);
+// console.log(map);
+
+// map.clear();
+// console.log(map);
+
+// for(let elem of map){
+//     document.writeln(elem + "<br>");    
+//     console.log(elem);
+// }
+
+// for(let [key, elem] of map){
+//     document.writeln("********************<br>");   
+//     document.writeln(key + "<br>");   
+//     document.writeln(elem + "<br>");   
+
+// }
+
+
+// let values = map.values();
+// console.log(values);
+
+// let keys = map.keys();
+// console.log(keys);
+
+// let entries = map.entries();
+// console.log(entries);
+
+// for(let el of map.values()){
+//     console.log(el);    
+// }
+
+// for(let el of map.keys()){
+//     console.log(el);    
+// }
+
+// for(let el of map.entries()){
+//     console.log(el);    
+// }
+
+// let maps = new Map();
+
+// maps.set("1", "one")
+//     .set(1, "first")
+//     .set(true, "bool");
+
+// let maps = new Map([
+//     ["1", "one"],
+//     [1, "first"],
+//     [true, "bool"]
+// ]);
+
+// console.log(maps);
+
+// maps.forEach((value, key) => {
+//     document.writeln(`${key}: ${value} <br>`);
+// })
+
+// const users = [
+//     {name: "Alex", age: 25},
+//     {name: "Bob", age: 30},
+//     {name: "Rob", age: 25},
+//     {name: "Diana", age: 30},
+//     {name: "Ivan", age: 35},
+// ]
+
+// const byAge = Map.groupBy(users, user => user.age);
+
+// console.log(byAge);
+
+// const age25 = byAge.get(25);
+// console.log(age25);
+
+// const items = [1, 2, 3, 4, 5];
+
+// const enumerate = Map.groupBy(items, n => n % 2 === 0 ? "even" : "odd");
+// console.log(enumerate);
+
+
+// Создать коллекцию Map на два элемента из обычного массива. Ключами будет "строка" и "число", значениями строковые или числовые данные из массива.
+
+// const items = [1, "один", 2, "два", 3, "три", "четыре"];
+
+// const enumerate = Map.groupBy(items, n => typeof n == "number" ? "число" : "строка");
+// console.log(enumerate);
+
+// let obj = {
+//     name: "Сергей",
+//     age: 30
+// }
+
+// console.log(Object.entries(obj));
+
+// let map = new Map(Object.entries(obj));
+// document.writeln(map.get("name"));
+// console.log(map);
+
+// let obj1 = Object.fromEntries(map);
+// console.log(obj1);
+
+
+// const myObj = {};
+// let start1 = new Date().getTime();
+// for(let i = 0; i <= 10000000; i++){
+//     myObj[i] = i;
+//     delete myObj[i];
+// }
+// console.log(new Date().getTime() - start1);
+
+// const myMap = new Map();
+// let start2 = new Date().getTime();
+// for(let i = 0; i <= 10000000; i++){
+//     myMap.set(i, i);
+//     myMap.delete(i);
+// }
+// console.log(new Date().getTime() - start2);
+
+// const set = new Set();
+// set.add(5);
+// set.add(9);
+// set.add(5);
+
+// console.log(set);
+// console.log(set.size);
+
+
+/* const set = new Set([1, 2, 3, 4, 4, 5, 5, 6, 6]);
+console.log(set);
+// console.log(set.has(4));
+// set.delete(4);
+// console.log(set);
+// set.clear();
+// console.log(set);
+
+// for(let elem of set){
+//     console.log(elem);    
+// }
+
+// set.forEach(value => document.writeln(value + "<br>"));
+
+let arr = [...set];
+console.log(arr);
+
+let arr1 = Array.from(set);
+console.log(arr1); */
+
+/* let mas = [5, 9, 2, 5, 9];
+let set = new Set(mas);
+console.log(set);
+let mas1 = [...set];
+console.log(mas1); */
+
+
+// let mas = [5, 9, 2, 5, 9];
+// console.log(mas);
+// let mas1 = [...new Set(mas)];
+// console.log(mas1);
+
+
+/* class VisitorTracker{
+    constructor(){
+        this.visitors = new Set();
+        this.totalVisits = 0;
+    }
+
+    registerVisit(userId){
+        this.totalVisits++;
+        this.visitors.add(userId);
+    }
+
+    getUniqueCount(){
+        return this.visitors.size;
+    }
+
+    getNewVisitorPercent(){
+        if(this.totalVisits === 0){
+            return 0;
+        }
+        return (this.visitors.size / this.totalVisits) * 100;
+    }
+}
+
+const tracker = new VisitorTracker();
+
+tracker.registerVisit("user_1");
+tracker.registerVisit("user_2");
+tracker.registerVisit("user_1");
+tracker.registerVisit("user_3");
+tracker.registerVisit("user_2");
+
+console.log(`Всего визитов: ${tracker.totalVisits}`);
+console.log(`Уникальных посетителей: ${tracker.getUniqueCount()}`);
+console.log(`Процент новых: ${tracker.getNewVisitorPercent()}%`); */
+
+// const one = new Set(['first', 'second', 'third', 'fourth']);
+// const two = new Set(['second', 'fifth',  'fourth', 'sixth']);
+
+// const uni = one.union(two);
+// console.log([...uni]);
+
+// const both = one.intersection(two);
+// console.log([...both]);
+
+// const onlyOne = one.difference(two);
+// console.log([...onlyOne]);
+
+// const onlyTwo = two.difference(one);
+// console.log([...onlyTwo]);
+
+// const unique = one.symmetricDifference(two);
+// console.log([...unique]);
+
+// setTimeout(function(){
+//     console.log("1");
+// }, 1500);
+
+// console.log("2");
+
+
+// Client -> Server -> DataBase -> Server -> Client
+
+/* console.log("Клиент: хочу получить список пользователей");
+console.log("...");
+
+setTimeout(function () {
+    console.log("Сервер: запрашиваю список пользователей в БД");
+    console.log("...");
+
+    setTimeout(function () {
+        console.log("БД: формирую список пользователей");
+        console.log("...");
+
+        setTimeout(function () {
+            console.log("Сервер: трансформирую данные для клиента");
+            console.log("...");
+
+            setTimeout(function () {
+                console.log("Клиент: получил данные и отображаю их");
+            }, 1000);
+        }, 500);
+    }, 500);
+}, 1000); */
+
+
+/* console.log("Клиент: хочу получить список пользователей");
+console.log("...");
+
+let promise = new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log("Сервер: запрашиваю список пользователей в БД");
+        console.log("...");
+        resolve();
+    }, 1000)
+})
+    .then(function () {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                let users = [
+                    {uid: 'id1', name: 'Igor'},
+                    {uid: 'id2', name: 'Irina'},
+                ]
+                // reject("База данных не смогла получить список пользователей");
+                console.log("БД: формирую список пользователей", users);
+                console.log("...");
+                resolve(users);
+            }, 500);
+        })
+    })
+    .then(function (dbUsers) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log("Сервер: трансформирую данные для клиента");
+                console.log("...");
+                let users = dbUsers.map(function(user){
+                    return {
+                        id: user.uid,
+                        firstName: user.name,
+                        timestamp: Date.now()
+                    }
+                })
+                resolve(users);
+            }, 500);
+        })
+    })
+    .then(function (users) {
+        return new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                console.log("Клиент: получил данные и отображаю их", users);
+                resolve();
+            }, 1000);
+        })
+    })
+    .catch(function(error){
+        console.log(error);        
+    })
+    .finally(function(){
+        console.log("Finally");        
+    }) */
+
+
+// let test = ms => {
+//     return new Promise(resolve => {
+//         setTimeout(() => resolve(), ms);
+//     })
+// }
+
+// test(1000).then(() => console.log("1000 ms"));
+// test(2000).then(() => console.log("2000 ms"));
+
+// Promise.all([test(1000), test(2000)]).then(() => {
+//     console.log("All");    
+// })
+
+// Promise.race([test(1000), test(2000)]).then(() => {
+//     console.log("Race");    
+// })
+
+/* let test = ms => {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(), ms);
+    })
+}
+
+let p1 = test(1000).then(() => ({name: "Promise 1000"}));
+let p2 = test(2000).then(() => ({name: "Promise 2000"}));
+
+Promise.all([p1, p2]).then((data) => {
+    console.log("All", data);    
+})
+
+Promise.race([p1, p2]).then((data) => {
+    console.log("Race", data);    
+}) */
+
+/* fetch('https://jsonplaceholder.typicode.com/todos')
+      .then(response => response.json())
+      .then(json => console.log(json)) */
+
+
+/* document.querySelector("#load").addEventListener("click", load);
+
+function load(){
+    let url = "https://jsonplaceholder.typicode.com/users";
+    fetch(url)
+        .then(function(response){
+            return response.json()
+        })
+        .then(function(data){
+            let ul = document.querySelector("#list");
+            let html = data.map(function(item){
+                return "<li>"+ item.id + " " + item.name + " " + item.email +"</li>";
+            })
+            ul.insertAdjacentHTML("afterbegin", html.join(" "));
+        })
+} */
+
+// document.querySelector("#load").addEventListener("click", load);
+
+// async function load() {
+//     try {
+//         let url = "https://jsonplaceholder.typicode.com/users";
+//         let response = await fetch(url);
+//         let data = await response.json();
+//         let html = data.map(function (item) {
+//             return "<li>" + item.id + " " + item.name + " " + item.email + "</li>";
+//         })
+//         document.querySelector("#list").insertAdjacentHTML("afterbegin", html.join(" "));
+//     } catch(error){
+//         console.error("Ошибка при загрузке:", error);
+//     }    
+// }
+
+// let obj = {"5": 5, 5: 10}  // {"5": 10}
+// console.log(obj["5"]);
+
+// let mas = [5,8,3];
+// mas[8] = 2;
+// console.log(mas);
+
+// let a = "5fvdgdfg"[0]
+// console.log(a);
+
+function sum(...args){
+    let res = 0;
+    for(let i = 0; i<args.length; i++){
+        res += args[i];
+    }
+    return res;
+}
+
+console.log(sum(1,2,3));
+console.log(sum(1,2,3,5,6,7,8));
+console.log(sum(5,6,8,7,8,9,9,5,4,5,5,6,7));
