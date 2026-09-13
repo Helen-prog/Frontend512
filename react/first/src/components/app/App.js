@@ -13,6 +13,7 @@ function App(props) {
       <Nav navigation={navigation} />
       <Article db={db} />
       <Footer copyright={txt} />
+
     </div>
   );
 }
