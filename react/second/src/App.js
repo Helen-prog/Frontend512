@@ -3,7 +3,9 @@ import React from 'react';
 // import Length from './Length';
 // import Form from './Form';
 // import Range from './Range';
-import Posts from './Posts';
+// import Posts from './Posts';
+import Test from './Test';
+import User from './User';
 import './App.css';
 
 class App extends React.Component {
@@ -13,7 +15,8 @@ class App extends React.Component {
       {id: "1", name: "JS Basics", title: "Обучение базовым конструкциям JavaScript"},
       {id: "2", name: "JS Advanced", title: "Обучение расширенным возможностям JavaScript"},
       {id: "3", name: "React JS", title: "Обучение React JS"},
-    ]
+    ],
+    show: true
   }
 
   removePost = (id) => {
@@ -25,9 +28,12 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Posts posts={posts} removePost={this.removePost} />
+        <button onClick={() => this.setState({show: !this.state.show})}>User</button>
+        {this.state.show ? <User /> : null}
+        <Test />
+        {/* <Posts posts={posts} removePost={this.removePost} />
        
-        {/* <Hello />
+        <Hello />
         <Length />
         <Form />
         <Range /> */}

@@ -581,6 +581,64 @@ src
 			Article.css
 		footer
 			Footer.js
+		nav
+			Nav.js
+			Nav.css
 	
 Ctrl + C
 - остановить сервер
+
+
+npm install
+
+let a = 5;
+
+console.log(a);
+
+section yellow
+	div  green
+		p red
+	
+src
+	Hello.js
+	Length.js
+	Form.js
+	Range.js
+	
+	Posts.js
+	Post.js
+	
+	Test.js
+	User.js
+	
+src	
+	layout
+		Header.js
+		Header.css
+		Footer.js
+		Footer.css
+		Main.js
+		Main.css
+	components
+		MovieList.js
+		MovieList.css
+		Movie.js
+		Movie.css
+		Preloader.js
+		Preloader.css
+		Search.js
+		Search.css
+		
+		
+		
+		
+http://www.omdbapi.com/?apikey=4eb9d7fd&s=matrix
+	
+N/A
+
+http://www.omdbapi.com/?apikey=4eb9d7fd&s=matrix
+
+http://www.omdbapi.com/?apikey=4eb9d7fd&s=one&page=1
+http://www.omdbapi.com/?apikey=4eb9d7fd&s=one&type=game&page=1
+
+57 / 10 = 5.7 => 6
