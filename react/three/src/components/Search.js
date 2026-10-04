@@ -29,8 +29,16 @@ class Search extends React.Component {
     }
 
     nextPage = () => {
+        let total = Math.ceil(this.props.totalCount / 10);
         this.setState(
-            { page: this.state.page + 1 },
+            this.state.page === total ? {page: total} : {page: this.state.page + 1 },
+            () => { this.props.serchMovie(this.state.search, this.state.type, this.state.page) }
+        )
+    }
+
+    setPage = (num) => {
+        this.setState(
+            {page: num},
             () => { this.props.serchMovie(this.state.search, this.state.type, this.state.page) }
         )
     }
@@ -39,10 +47,22 @@ class Search extends React.Component {
         let limit = 10;
         let totalPage = Math.ceil(this.props.totalCount / limit)
         
+        let lastIndex = totalPage <= 10 ? totalPage  : this.state.page + limit - 1;
+        let firstIndex = totalPage <= 10 ? lastIndex - limit + lastIndex - 2  : lastIndex - limit;  // 6 - 10 + 6 - 2 = 0
+
+        console.log("totalPage", totalPage);
+        console.log("firstIndex", firstIndex);
+        console.log("lastIndex", lastIndex);
+        console.log("page", this.state.page);
+        
+
         let num = [];
         for(let i=1; i <= totalPage; i++){
             num.push(i);
         }
+
+        console.log(this.state.page);
+        
         
         return (
             <>
@@ -78,13 +98,20 @@ class Search extends React.Component {
 
                     <div className="items">
                         {
-                            num.map((el, index) => (
-                                <button className="btn" key={index}>{el}</button>
+                            num
+                            .slice(firstIndex, lastIndex)
+                            .map((el, index) => (
+                                <button 
+                                    className="btn" 
+                                    key={index}
+                                    style={{background: this.state.page === el ? "gray" : ""}}
+                                    onClick={() => this.setPage(el)}
+                                    >{el}</button>
                             ))
                         }
                     </div>
 
-                    <button className="btn" onClick={this.nextPage}>Next</button>
+                    <button className="btn" onClick={this.nextPage} style={{opacity: this.state.page === totalPage ? ".5" : "1"}}>Next</button>
                 </div>
             </>
         )

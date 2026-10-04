@@ -642,3 +642,43 @@ http://www.omdbapi.com/?apikey=4eb9d7fd&s=one&page=1
 http://www.omdbapi.com/?apikey=4eb9d7fd&s=one&type=game&page=1
 
 57 / 10 = 5.7 => 6
+
+npm install gh-pages --save-dev
+
+npm run deploy
+
+
+Хуки
+
+Хук состояния
+
+useState
+
+src
+	Counter.js
+	Person.js
+	Modal.js
+	Modal.css
+	Item.js
+	Task.js
+	Form.js
+	
+	
+src
+	conponents
+		quizzes
+			Quizzes.js
+			Quizzes.css
+		progress
+			ProgressBar.js
+			ProgressBar.css
+		result
+			Result.js
+			Result.css
+			
+
+Gallery.js
+
+npm i react-image-gallery
+npm install react-image-gallery
+			
