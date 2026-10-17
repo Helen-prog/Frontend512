@@ -682,3 +682,48 @@ Gallery.js
 npm i react-image-gallery
 npm install react-image-gallery
 			
+src
+	components
+		users
+			Users.js
+			User.js
+			Users.css
+		success
+			Success.js
+			Success.css
+			
+
+seventh
+
+npm install react-router-dom
+
+http://localhost:3000/
+
+components
+	Layout.js
+Home.js
+About.js
+Articles.js
+AboutInfo.js
+Article.js
+NotFoundPage.js
+
+
+http://localhost:3000//
+
+http://localhost:3000/articles-us
+
+http://localhost:3000/articles
+
+http://localhost:3000/about/45
+
+SCSS
+
+npm install sass
+
+Home.scss
+_variables.scss
+_mixins.scss
+_functions.scss
+
+Миксины

@@ -1,0 +1,7 @@
+@function red($opacity: 1){
+    @return rgba(255, 0, 0, $opacity);
+}
+
+@function align($text-align: center){
+    @return $text-align;
+}

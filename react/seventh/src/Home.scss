@@ -1,0 +1,160 @@
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+
+.container{
+    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+
+    div{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+$colors: gold, red, yellow, green, orange;
+
+@each $color in $colors{
+    .#{$color}{
+        background: $color;
+    }
+}
+
+$alerts: ( "error": red,
+            "neutral": blue,
+            "good": green,
+            "warning": yellow
+);
+
+@each $name, $color in $alerts{
+    .#{$name}{
+        background: lighten($color, 25%);
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+$j: 1;
+
+@while $j <= 5{
+    .container div:nth-child(#{$j}){
+        height: $j * 25px;
+        width: $j * 10px;
+    }
+    $j: $j + 1;
+}
+
+
+$base-color: green;
+@for $i from 1 through 3{
+    .block#{$i}:nth-child(even){ //2n
+        background: lighten($base-color, $i * 5%);
+    }
+}
+
+
+.wrap{
+    max-width: $max-w;
+    margin: 0 auto;
+    padding: $middle;
+}
+
+%shape{
+    position: relative;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: $middle;
+        right: $middle;
+        width: 30px;
+        height: 30px;
+        background: $bg-axcent;
+        border-radius: 50%;
+        border: 2px solid $bg-border;
+    }
+}
+
+.block1{
+    @extend %shape;
+    $max-w: 600px;
+    background: $bg-dark;
+
+    h2{
+        color: $bg-light;
+        font-size: $big;
+    }
+
+    p{
+        font-size: $small;
+    }
+
+    .wrap{   /*   .block1 .wrap   */
+        max-width: $max-w;
+    }
+
+    button{
+        @include button($bg-axcent, $bg-dark, $big){
+            // background: $bg-axcent;
+            // color: $bg-dark;
+            // font-size: $big;
+            font-weight: bold;
+        };
+    }
+
+    h3{
+        @include h3($border: true)
+    }
+
+    .description{
+        padding: 20px;
+        background: red(0.2);
+        text-align: align();
+    }
+}
+
+.block2{
+    @extend %shape;
+    &::after{
+        background: $bg-border;
+    }
+    background: $bg-light;
+    button{
+       @include button();
+    }
+
+    h3{
+        @include h3(white);
+    }
+
+    .description{
+        padding: 20px;
+        background: red(0.4);
+        text-align: align(right);
+    }
+}
+
+// $values: blue, aqua, 36px;
+$values: (color: blue, bgc: aqua, fs: 36px);
+.block3{
+    // @extend .block1;
+    background: darkgoldenrod;
+    
+    p{
+        font-size: $middle;
+    }
+
+    button{
+       @include button($values...);
+    }
+
+    h3{
+        @include h3(white, true);
+    }
+}
+
+.last{
+    text-align: center;
+}

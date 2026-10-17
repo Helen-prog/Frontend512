@@ -1,0 +1,26 @@
+@mixin button($bgc: green, $color: yellow, $fs: 24px) {
+    background: $bgc;
+    color: $color;
+    padding: $small $big;
+    font-size: $fs;
+    border-radius: 6px;
+
+    &:hover {
+        background: darken($bgc, 20%);
+    }
+
+    @content;
+}
+
+@mixin h3($bg-border-color: red, $border: false) {
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 6px;
+
+    @if $border == true {
+        border: 2px solid $bg-border-color;
+    }
+    @else {
+        background: $bg-border-color;
+    }
+}
