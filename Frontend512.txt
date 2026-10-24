@@ -727,3 +727,44 @@ _mixins.scss
 _functions.scss
 
 Миксины
+
+
+src
+	api.js
+	config.js
+	components
+		categoryList
+			CategoryList.js
+			CategoryList.css
+		categoryItem
+			CategoryItem.js
+			CategoryItem.css
+		MealList.js
+		Meal.js
+		Recipe.js
+		Recipe.css
+	pages
+		footer
+		header
+		main
+			Home.js
+			About.js
+			Contacts.js
+			NotFound.js
+			Categoty.js
+			Category.css
+		Layout.js
+		
+- List categories		
+https://themealdb.com/api/json/v1/1/categories.php
+
+- Lookup full meal details by ID
+https://themealdb.com/api/json/v1/1/lookup.php?i=52772
+
+- Filter by category
+https://themealdb.com/api/json/v1/1/filter.php?c=Seafood
+
+
+https://www.youtube.com/watch?v=4aZr5hZXP_s
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4aZr5hZXP_s?si=HRV-tM8Uoa-HDdfJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

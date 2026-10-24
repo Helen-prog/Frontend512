@@ -5,6 +5,7 @@ import About from "./pages/main/About";
 import Contacts from "./pages/main/Contacts";
 import NotFound from "./pages/main/NotFound";
 import Category from "./pages/main/Categoty";
+import Recipe from "./components/Recipe";
 
 function App() {
   const text = {
@@ -20,6 +21,7 @@ function App() {
           <Route path="about" element={<About text={text} />} />
           <Route path="contacts" element={<Contacts />} />
           <Route path="category/:name" element={<Category />} />
+          <Route path="meal/:id" element={<Recipe />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -1,0 +1,496 @@
+// let b: boolean = false;
+// b = true;
+
+// const num1:number = 6;
+
+// const firstName: string = "Igor";
+// const st: string = `Hello, ${firstName}`;
+// console.log(st);
+
+// const hello = (): void => console.log("Hello");
+// hello();
+
+// const hello1 = (): string => "Hello!!!";
+// console.log(hello1());
+
+// let mas1: number[] = [1,2,3];
+// let mas2: Array<number> = [1,2,3];
+// console.log(mas1);
+// console.log(mas2);
+
+// let x: [string, number];
+// x = ["hello", 5];
+
+// let x: [string, number] = ["hello", 5];
+
+// let x: [any, any] = ["hello", 5];
+// let y: [any, any] = ["hello", "5"];
+// let z: any[] = ["hello", "5", 7, 8, true];
+
+// let mas2: [any, any] = ["hello", 5];
+// let mas3: Array<any> = ["hello", 5, 4, true];
+
+// let n: any = false;
+// n = true;
+// n = "Hello";
+// n = 42
+
+
+// enum Directins{
+//     Up = 3,
+//     Down = 1,
+//     Left = 7,
+//     Right
+// }
+
+// console.log(Directins.Up);
+// console.log(Directins.Down);
+// console.log(Directins.Left);
+// console.log(Directins.Right);
+
+// console.log(Directins[3]);
+// console.log(Directins[1]);
+// console.log(Directins[7]);
+// console.log(Directins[8]);
+
+
+// const enum links{
+//     youtube = 'https://youtube.com',
+//     github = 'https://github.com',
+//     vk = 'https://vk.com'
+// }
+
+// console.log(links.youtube)
+// console.log(links.github)
+// console.log(links.vk)
+
+// const createPassword = (name: string = "Irina", 
+// age: number | string = 20) => `${name}${age}`;
+
+// console.log(createPassword("Igor", 25));
+// console.log(createPassword("Igor", "25"));
+// console.log(createPassword());
+
+// const createSkills = (name: string, 
+// ...skills: Array<string>): string => `${name}, myskills are ${skills.join(', ')}`;
+
+// console.log(createSkills("Igor", "HTML", "CSS", "JS", "React"));
+
+const createSkills = (name: string, 
+...skills: Array<string>): void => console.log(`${name}, myskills are ${skills.join(', ')}`);
+
+createSkills("Igor", "HTML", "CSS", "JS", "React");
+
+// =================================================================
+
+type Person = {name: string, age: number, login: string};
+
+let user: Person = {
+    name: "Igor",
+    age: 25,
+    login: "sample"
+};
+
+let admin: Person = {
+    name: "Irina",
+    age: 20,
+    login: "administrator"
+};
+
+
+console.log(user);
+console.log(admin);
+
+// =================================================================
+
+type Person = {name: string, age: number, login?: string, getLogin?: () => string};
+
+let user: Person = {
+    name: "Igor",
+    age: 25,
+    login: "sample"
+};
+
+let admin: Person = {
+    name: "Irina",
+    age: 20,
+    getLogin(): string {
+        return `${this.name}${this.age}`
+    }
+};
+
+
+console.log(user);
+console.log(admin);
+
+// =================================================================
+
+class User{
+    name: string;
+    age: number;
+    login: string;
+
+    constructor(name: string, age: number, login: string){
+        this.name = name;
+        this.age = age;
+        this.login = login;
+    }
+}
+
+const obj = new User("Igor", 25, "sample");
+console.log(obj);
+
+
+// =================================================================
+
+class User{
+    public name: string;
+    private age: number;
+    protected login: string;
+    readonly psw: string
+
+    constructor(name: string, age: number, login: string, psw: string){
+        this.name = name;
+        this.age = age;
+        this.login = login;
+        this.psw = psw;
+    }
+}
+
+const obj = new User("Igor", 25, "sample", "qwerty");
+console.log(obj.name);
+console.log(obj.psw);
+// obj.psw = "asdfgh";
+
+// =================================================================
+
+class User{
+    name: string;
+    age: number = 25;
+    login: string = "sample";
+    
+    constructor(name: string){
+        this.name = name;
+    }
+
+    getPsw(): string{
+        return `${this.login}${this.age}`;
+    }
+}
+
+const obj = new User("Igor");
+console.log(obj);
+console.log(obj.getPsw());
+
+// =================================================================
+
+class User{
+    constructor(
+        public name: string, 
+        public age: number, 
+        public login: string, 
+        public psw: string
+    ){}
+}
+
+const obj = new User("Igor", 25, "sample", "qwerty");
+console.log(obj);
+
+// =================================================================
+class User{
+    constructor(
+        public name: string, 
+        private age: number, 
+        public login: string, 
+        public psw: string
+    ){}
+
+    set userAge(age: number){
+        this.age = age;
+    }
+
+    setAge(age: number){
+        this.age = age;
+    }
+}
+
+const obj = new User("Igor", 25, "sample", "qwerty");
+obj.userAge = 30;
+console.log(obj);
+obj.setAge(35);
+console.log(obj);
+
+// =================================================================
+
+class User{
+
+    static secret = 12345;
+
+    constructor(
+        public name: string, 
+        private age: number, 
+        public login: string, 
+        public psw: string
+    ){}
+
+    set userAge(age: number){
+        this.age = age;
+    }
+
+    setAge(age: number){
+        this.age = age;
+    }
+}
+
+console.log(User.secret);
+
+
+// =================================================================
+
+
+class User{
+
+    private login: string = "sample";
+    static secret = 12345;
+
+    constructor(
+        public name: string, 
+        public age: number, 
+    ){}
+
+    getPsw(): string{
+        return `${this.name}${User.secret}`
+    }
+}
+
+class Person extends User{
+    tel: string;
+
+    constructor(name: string, age: number, tel: string){
+        super(name, age);
+        this.tel = tel;
+    }
+}
+
+const obj = new User("Igor", 25);
+const obj1 = new Person("Irina", 30, "+7 999 123 45 67");
+console.log(obj);
+console.log(obj.getPsw());
+console.log(obj1);
+
+// =================================================================
+
+class User{
+
+    private login: string = "sample";
+    static secret = 12345;
+
+    constructor(
+        public name: string, 
+        public age: number, 
+    ){}
+
+    getPsw(): string{
+        return `${this.name}${User.secret}`
+    }
+}
+
+class Person extends User{
+    tel: string;
+
+    constructor(name: string, age: number, tel: string){
+        super(name, age);
+        this.tel = tel;
+    }
+
+    getPsw(): string{
+        return `${this.age}${super.getPsw()}`;
+    }
+}
+
+const obj = new User("Igor", 25);
+const obj1 = new Person("Irina", 30, "+7 999 123 45 67");
+console.log(obj);
+console.log(obj.getPsw());
+console.log(obj1);
+console.log(obj1.getPsw());
+
+
+// =================================================================
+
+namespace Utils {
+    export const SECRET: string = "123456";
+    export const getPsw = (name: string, age: number): string => `${name}${age}`;
+}
+
+const password = Utils.getPsw("Igor", 25);
+console.log(password);
+console.log(Utils.SECRET);
+
+// =================================================================
+
+interface User {
+    name: string,
+    age: number
+}
+
+const person: User = {
+    name: "Igor",
+    age: 25
+}
+
+console.log(person);
+
+// =================================================================
+
+interface User {
+    name: string,
+    age?: number
+}
+
+const person: User = {
+    name: "Igor",
+   
+}
+
+console.log(person);
+
+// =================================================================
+
+interface User {
+    readonly name: string,
+    age: number
+}
+
+const person: User = {
+    name: "Igor",
+    age: 25
+}
+
+console.log(person);
+person.name = "Viktor";
+
+// =================================================================
+
+interface User {
+    name: string,
+    age: number,
+    [propName: string]: any
+}
+
+const person: User = {
+    name: "Igor",
+    age: 25,
+
+    login: "admin",
+    test: 56
+}
+
+console.log(person);
+
+// =================================================================
+
+interface User {
+    name: string,
+    age: number    
+}
+
+interface Psw{
+    getPsw(): string
+}
+
+class Person implements User, Psw {
+    name: string = "Igor";
+    age: number = 25;
+    login: string = "admin";
+    
+    getPsw(){
+        return `${this.name}${this.age}`;
+    }
+
+}
+
+let person = new Person();
+console.log(person);
+console.log(person.getPsw());
+
+
+// =================================================================
+
+interface User {
+    name: string,
+    age: number    
+}
+
+interface Admin extends User{
+    getPsw(): string
+}
+
+class Person implements Admin {
+    name: string = "Igor";
+    age: number = 25;
+    login: string = "admin";
+    
+    getPsw(){
+        return `${this.name}${this.age}`;
+    }
+
+}
+
+let person = new Person();
+console.log(person);
+console.log(person.getPsw());
+
+// =================================================================
+
+function getter<T>(data: T): T{
+    return data;
+}
+
+console.log(getter('test').length);
+console.log(getter([7,8,9,2,4,5,6]).length);
+
+//==================================================================
+
+class User<T>{
+    constructor(public name: T, public age: T){}
+
+    public getPsw(): string{
+        return `${this.name}${this.age}`;
+    }
+}
+
+const obj1 = new User("Igor", "25");
+const obj2 = new User(123, 456);
+
+console.log(obj1.getPsw());
+console.log(obj2.getPsw());
+
+//==================================================================
+
+class User<T, K extends number>{
+    constructor(public name: T, public age: K){}
+
+    public getPsw(): string{
+        return `${this.name}${this.age}`;
+    }
+
+    public getSecret(): number{
+        return this.age * 2;
+    }
+}
+
+const obj1 = new User("Igor", 25.6);
+const obj2 = new User(123, 456);
+const obj3 = new User("Irina", 456);
+const obj4 = new User(true, 5);
+
+console.log(obj1.getSecret());
+console.log(obj2.getSecret());
+console.log(obj3.getSecret());
+console.log(obj4.getSecret());
+
+// console.log(obj1.getPsw());
+// console.log(obj2.getPsw());
+// console.log(obj3.getPsw());
+// console.log(obj4.getPsw());
