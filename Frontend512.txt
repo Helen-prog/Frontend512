@@ -768,3 +768,22 @@ https://themealdb.com/api/json/v1/1/filter.php?c=Seafood
 https://www.youtube.com/watch?v=4aZr5hZXP_s
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4aZr5hZXP_s?si=HRV-tM8Uoa-HDdfJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+npx create-react-app --template typescript .
+
+components
+	Card.tsx
+	UserList.tsx
+	UserItem.tsx
+	TodoItem.tsx
+	EventExample.tsx
+	Products.tsx
+	List.tsx
+types
+	types.tsx
+	models.tsx
+data
+	product.ts
+	
+	

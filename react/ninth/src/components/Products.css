@@ -1,0 +1,11 @@
+.content img{
+    width: 100px;
+    height: 100px;
+}
+.content{
+    margin: 50px auto;
+    border: 2px solid blue;
+    padding: 20px;
+    width: 400px;
+
+}
