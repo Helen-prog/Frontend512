@@ -5,13 +5,18 @@ import EditToysForm from "./EditToysForm";
 interface SingleToysProps{
     toy: Toys;
     updateToys: (newToys: Toys) => void;
+    deleteToys: (id: number) => void;
 }
 
-const SingleToys: FC<SingleToysProps> = ({toy, updateToys}) => {
+const SingleToys: FC<SingleToysProps> = ({toy, updateToys, deleteToys}) => {
     const [edit, setEdit] = useState<boolean>(false);
 
     const handleToggleEdit = () => {
         setEdit(!edit);
+    }
+
+    const handleDelete = () => {
+        deleteToys(toy.id);
     }
 
     return (
@@ -23,7 +28,7 @@ const SingleToys: FC<SingleToysProps> = ({toy, updateToys}) => {
             </div>
             <div className="toys-control">
                 <img src={`/images/edit.jpg`} alt="" onClick={handleToggleEdit} />
-                <img src={`/images/delete.jpg`} alt="" />
+                <img src={`/images/delete.jpg`} alt="" onClick={handleDelete} />
             </div>
             {
                 edit ? <EditToysForm data={toy} updateToys={updateToys} handleToggleEdit={handleToggleEdit} /> : null

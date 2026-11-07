@@ -779,6 +779,7 @@ components
 	TodoItem.tsx
 	EventExample.tsx
 	Products.tsx
+	Products.css
 	List.tsx
 types
 	types.tsx
@@ -787,3 +788,41 @@ data
 	product.ts
 	
 	
+src
+	models
+		Toys.ts
+	components
+		AddToysForm.tsx
+		DisplayToys.tsx
+		SingleToys.tsx
+		EditToysForm.tsx
+		
+Vue
+npm install -g @vue/cli
+
+vue --version
+
+vue create .
+
+npm run serve
+
+src
+	components
+		HeaderTop.vue
+		ListItems.vue
+		DirectiveStart.vue
+		
+		
+
+<div v-if="notes.length === 0">
+<div v-else-if="notes.length === 0">
+<div v-else>
+
+v-bind => :
+v-on => @
+
+
+src
+	components
+		FirstComponent.vue
+		AppButton.vue

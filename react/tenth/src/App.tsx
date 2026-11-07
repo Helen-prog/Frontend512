@@ -7,7 +7,7 @@ import './App.css';
 
 // const App: React.FunctionComponent = () => {
 const App: FC = () => {
-  const [toysList, setToysList] = useState<Toys[]>(demoToys);
+  const [toysList, setToysList] = useState<Toys[]>(demoToys); 
 
   const addToys = (newToys: Toys) => {
     setToysList([...toysList, newToys]);
@@ -15,6 +15,11 @@ const App: FC = () => {
 
   const updateToys = (newToys: Toys) => {
     setToysList(toysList.map(toys => (toys.id === newToys.id ? newToys : toys)));
+  }
+
+  const deleteToys = (id: number) => {
+    const newToysList = toysList.filter(toy => toy.id !== id);
+    setToysList(newToysList);
   }
 
   // console.log(toysList);
@@ -27,7 +32,7 @@ const App: FC = () => {
           <AddToysForm addToys={addToys} />
         </div>
         <div className="display">
-          <DisplayToys toysList={toysList} updateToys={updateToys} />
+          <DisplayToys toysList={toysList} updateToys={updateToys} deleteToys={deleteToys} />
         </div>
       </div>
     </div>
