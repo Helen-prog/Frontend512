@@ -826,3 +826,14 @@ src
 	components
 		FirstComponent.vue
 		AppButton.vue
+		AppNewsList.vue
+		AppBlock.vue
+		AppList.vue
+		AppTextOne.vue
+		AppTextTwo.vue
+
+
+src
+	components
+		AppInput.vue
+		

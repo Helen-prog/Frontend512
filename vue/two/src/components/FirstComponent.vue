@@ -5,16 +5,15 @@
     <app-button
     :color="'green'"
     v-if="wasRead"
-    @click="$emit('unmark', id)"
-    :text="'Отметить непрочитанной'"
-    ></app-button>
+    @click="$emit('unmark', id)"    
+    >Отметить непрочитанной</app-button>
     <!-- <button class="btn" @click="open">
       {{ isNewOpen ? "Закрыть" : "Открыть" }}
     </button> -->
     <app-button
         @click="open"
-        :text="isNewOpen ? 'Закрыть' : 'Открыть'"
-    ></app-button>
+        
+    >{{ isNewOpen ? 'Закрыть' : 'Открыть' }}</app-button>
   </div>
   <div :class="isNewOpen ? 'card' : 'display'">
     <div v-if="isNewOpen">
@@ -25,15 +24,16 @@
        <app-button
         v-if="!wasRead"
         :color="'blue'"
-        @action="mark"
-        :text="'Прочесть новость'"
-       ></app-button>
+        @action="mark"      
+       >Прочесть новость</app-button>
+       <app-news-list></app-news-list>
     </div>
   </div>
 </template>
 
 <script>
 import AppButton from './AppButton.vue';
+import AppNewsList from './AppNewsList.vue';
 
 export default {
   name: "FirstComponent",
@@ -80,7 +80,8 @@ export default {
   },
   emits: ["open-news", "read-news", "unmark"],
   components: {
-    AppButton
+    AppButton,
+    AppNewsList
   }
 };
 </script>

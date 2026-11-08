@@ -1,19 +1,111 @@
 <template>
   <div class="content">
     <div class="card">
+      <h2>Динамически компоненты</h2>
+    </div>
+    <div class="card">
+      <app-button
+      :color="oneColor"
+      @action="active = 'one'"
+      >
+        One
+      </app-button>
+      <app-button
+      :color="twoColor"
+      @action="active = 'two'">
+        Two
+      </app-button>
+    </div>
+    <component :is="componentName"></component>  
+  </div>
+</template>
+
+<script>
+import AppButton from "./components/AppButton.vue";
+import AppTextOne from './components/AppTextOne.vue';
+import AppTextTwo from './components/AppTextTwo.vue';
+
+export default{
+  data(){
+    return {
+      active: "one"
+    }
+  },
+  computed: {
+    componentName(){
+      if(this.active === "one"){
+        return 'app-text-one'
+      }
+      return 'app-text-two'
+    },
+    oneColor(){
+      return this.active === 'one'? 'green' : ''
+    },
+    twoColor(){
+      return this.active === 'two'? 'green' : ''
+    }
+  },
+  components: {AppButton, AppTextOne, AppTextTwo}
+}
+</script>
+
+
+
+<!-- <template>
+  <div class="content">
+    <div class="card">
+      <h2>Slots</h2>
+    </div>
+
+    <app-list>
+      <template #default="{idx, iter}">
+        <span style="color: green">
+          <strong>{{ idx + 1 }}</strong>
+          Item: {{ iter }}
+        </span>
+      </template>
+    </app-list>
+
+    <app-block>
+      <p>Текст для нового блока</p>
+
+      <template v-slot:left>
+        <h3>Это заголовок!</h3>
+      </template>
+
+      <template #right>
+        <h3>Это подвал!</h3>
+      </template>
+    </app-block>
+  </div>
+</template>
+
+<script>
+import AppBlock from "./components/AppBlock.vue";
+import AppList from "./components/AppList.vue";
+
+export default {
+  components: { AppBlock, AppList },
+};
+</script> -->
+
+
+<!-- <template>
+  <div class="content">
+    <div class="card">
       <h3>Новости: {{ now }}</h3>
       <span>Открыто: <strong>{{ openRate }}</strong> | Прочитано: <strong>{{ readRate }}</strong></span>
-    </div>
+    </div> -->
     <!-- <div class="card" v-for="item in news" :key="item">
       {{ item }}
       <button class="btn">Открыть</button>
     </div> -->
-  </div>
+  <!-- </div> -->
   <!-- <first-component title="Заголовок новости 1"></first-component>
   <first-component title="Заголовок новости 2"></first-component>
   <first-component></first-component>
   <FirstComponent /> -->
-  <first-component
+  <!-- <first-component
     v-for="item in news"
     :key="item"
     v-bind:title="item.title"
@@ -43,6 +135,12 @@ export default {
       readRate: 0
     }
   },
+  provide(){
+    return {
+      title: "Список всех новостей",
+      news: this.news
+    }
+  },
   components: {
     // "first-component": FirstComponent
     // 'FirstComponent': FirstComponent
@@ -63,5 +161,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+h3{
+  color: darkgoldenrod;
+}
+</style> -->
 
 
